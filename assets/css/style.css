@@ -7,9 +7,9 @@
   --secondary-title-font: "Caveat", "Playfair Display", serif;
   --default-font: "Open Sans", sans-serif;
   /* colors */
-  --primary-color: #cda45e;
+  --primary-color: #f7e93b;
   --black-color: #000000;
-  --gray-color: #393939;
+  --gray-color: #2c3034;
   --white-color: #ffffff;
 }
 
@@ -387,10 +387,12 @@ a:hover {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  height: 100svh;
+  background: url("../img/hero-bg.JPG") bottom center;
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
+  /* background-color: #f7e93b; */
   padding: 0;
 }
 
@@ -411,6 +413,15 @@ a:hover {
   height: 600px;
 }
 
+#hero img {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  filter: invert(98%) sepia(30%) saturate(38%) hue-rotate(327deg) brightness(105%) contrast(94%);
+  z-index: 996;
+}
+
 #hero h1 {
   margin: 0;
   font-size: 60px;
@@ -421,7 +432,9 @@ a:hover {
 }
 
 #hero h1 span {
-  color: var(--primary-color);
+  font-weight: 100;
+  font-size: 50px;
+
 }
 
 #hero h2 span {
@@ -566,6 +579,11 @@ a:hover {
 
 @media (max-width: 768px) {
   #hero h1 {
+    font-size: 38px;
+    line-height: 36px;
+  }
+  
+  #hero h1 span{
     font-size: 34px;
     line-height: 36px;
   }
@@ -573,6 +591,12 @@ a:hover {
   #hero h2 {
     font-size: 16px;
     line-height: 24px;
+  }
+
+  #hero img {
+    left: 8px;
+    bottom: 14px;
+    width: 100px
   }
 }
 
@@ -673,8 +697,10 @@ section {
 .students .box {
   padding: 20px;
   text-align: center;
+  background-color: #22252a;
+  border-radius: 9px;
   margin: 15px 5px;
-  box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45) !important;
+  /* box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45) !important; */
   transition: all ease-in-out 0.3s;
 }
 
@@ -733,7 +759,7 @@ section {
   color: rgba(255, 255, 255, 0.5);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   #program {
     width: 100%;
   }
@@ -743,9 +769,9 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-  background: var(--black-color);
+  /* background: var(--black-color); */
   border-top: 1px solid #37332a;
-  padding: 60px 20px;
+  padding: 60px 20px 130px 20px;
   line-height: 1;
 }
 
@@ -762,4 +788,14 @@ section {
 #footer .copyright {
   text-align: center;
   padding-top: 30px;
+}
+
+#sticky-footer {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  z-index: 50;
+  background: rgba(12, 11, 9, 0.6);
+  border-top: 1px solid rgba(12, 11, 9, 0.6);
 }
